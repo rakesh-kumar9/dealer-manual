@@ -1,0 +1,20 @@
+1
+00:00:10,560 --> 00:00:18,630
+Two entry orders for the same client and instrument: a buy limit below the market and a buy stop above it.
+
+2
+00:00:18,730 --> 00:00:24,990
+First show the OCO column.
+
+3
+00:00:25,090 --> 00:00:28,510
+Link OCO Order makes the two orders One-Cancels-Other.
+
+4
+00:00:28,610 --> 00:00:38,480
+Pick the order to link with. Only orders that can be linked are listed: same client, instrument and side, one limit and one stop.
+
+5
+00:00:38,580 --> 00:00:42,980
+Each order now shows its partner in OCO. When one fills, the other is cancelled.
+

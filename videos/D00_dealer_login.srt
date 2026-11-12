@@ -1,0 +1,28 @@
+1
+00:00:01,890 --> 00:00:08,590
+The dealer app opens on its own login screen, marked DEALER.
+
+2
+00:00:08,690 --> 00:00:13,730
+Click the Server box and pick your dealing server from the list.
+
+3
+00:00:13,830 --> 00:00:18,180
+Enter your dealer login.
+
+4
+00:00:18,280 --> 00:00:22,700
+Then your password. It stays hidden.
+
+5
+00:00:22,800 --> 00:00:24,590
+Click Login.
+
+6
+00:00:24,690 --> 00:00:33,650
+The app loads every account, order and position in your book. On a large book this takes a few seconds.
+
+7
+00:00:33,750 --> 00:00:38,650
+You are in. Connected at the top left means live updates are flowing.
+

@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ActTrader Dealer How-to Videos (Internal)</title>
+<style>
+:root {
+  --bg: #080808; --panel: #121212; --panel2: #1a1a1a; --border: #262626;
+  --text: #ececec; --dim: #9a9a9a; --accent: #FF8539; --accent-bg: rgba(255,133,57,.14);
+  --mark: rgba(255,133,57,.35); --shadow: 0 8px 30px rgba(0,0,0,.5);
+}
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --bg: #f6f6f4; --panel: #ffffff; --panel2: #f0efec; --border: #e1dfda;
+    --text: #1d1d1d; --dim: #666; --accent: #d9661f; --accent-bg: rgba(217,102,31,.10);
+    --mark: rgba(217,102,31,.25); --shadow: 0 8px 30px rgba(0,0,0,.12);
+  }
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--bg); color: var(--text);
+  font: 15px/1.45 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+header { position: sticky; top: 0; z-index: 5; background: var(--bg);
+  border-bottom: 1px solid var(--border); padding: 18px 24px 12px; }
+.wrap { max-width: 1280px; margin: 0 auto; }
+h1 { font-size: 22px; margin: 0 0 2px; font-weight: 650; }
+.sub { color: var(--dim); font-size: 13px; margin-bottom: 12px; }
+.search { display: flex; align-items: center; gap: 10px; background: var(--panel);
+  border: 1px solid var(--border); border-radius: 10px; padding: 0 14px; height: 46px; }
+.search:focus-within { border-color: var(--accent); }
+.search svg { flex: none; opacity: .6; }
+.search input { flex: 1; min-width: 0; border: 0; outline: 0; background: transparent;
+  color: var(--text); font-size: 16px; }
+.kbd { color: var(--dim); font-size: 12px; border: 1px solid var(--border);
+  border-radius: 5px; padding: 1px 6px; }
+.chips { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+.chip { border: 1px solid var(--border); background: var(--panel); color: var(--text);
+  border-radius: 999px; padding: 5px 12px; font-size: 13px; cursor: pointer; }
+.chip[aria-pressed="true"] { background: var(--accent-bg); border-color: var(--accent); color: var(--accent); }
+.chip .n { color: var(--dim); margin-left: 4px; }
+main { padding: 8px 24px 60px; }
+.count { color: var(--dim); font-size: 13px; margin: 14px 0 6px; }
+h2 { font-size: 15px; font-weight: 650; margin: 26px 0 12px; color: var(--dim);
+  text-transform: uppercase; letter-spacing: .06em; }
+.grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); }
+.card { background: var(--panel); border: 1px solid var(--border); border-radius: 12px;
+  overflow: hidden; cursor: pointer; display: flex; flex-direction: column; text-align: left;
+  color: inherit; font: inherit; padding: 0; }
+.card:hover, .card:focus-visible { border-color: var(--accent); outline: none; }
+.thumb { position: relative; aspect-ratio: 16 / 8.6; background: #000; }
+.thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.dur { position: absolute; right: 8px; bottom: 8px; background: rgba(0,0,0,.75); color: #fff;
+  font-size: 12px; padding: 1px 6px; border-radius: 4px; }
+.play { position: absolute; inset: 0; display: grid; place-items: center; opacity: 0; transition: opacity .15s; }
+.card:hover .play { opacity: 1; }
+.play span { width: 50px; height: 50px; border-radius: 50%; background: rgba(0,0,0,.6);
+  display: grid; place-items: center; }
+.body { padding: 12px 14px 14px; }
+.title { font-weight: 600; font-size: 15px; margin: 0 0 4px; }
+.sum { color: var(--dim); font-size: 13px; margin: 0; }
+.hits { margin: 10px 0 0; padding: 0; list-style: none; border-top: 1px solid var(--border); padding-top: 8px; }
+.hits li { font-size: 13px; padding: 3px 0; display: flex; gap: 8px; }
+.hits a { color: var(--accent); text-decoration: none; font-variant-numeric: tabular-nums; flex: none; }
+.hits a:hover { text-decoration: underline; }
+mark { background: var(--mark); color: inherit; border-radius: 2px; }
+.empty { color: var(--dim); text-align: center; padding: 60px 0; }
+.player { position: fixed; inset: 0; background: rgba(0,0,0,.8); display: none; z-index: 10;
+  align-items: center; justify-content: center; padding: 20px; }
+.player.open { display: flex; }
+.pbox { background: var(--panel); border-radius: 12px; overflow: hidden; width: min(1100px, 100%);
+  box-shadow: var(--shadow); }
+.pbox video { width: 100%; display: block; background: #000; max-height: 75vh; }
+.pbar { display: flex; align-items: center; gap: 12px; padding: 10px 14px; }
+.pbar .t { flex: 1; font-weight: 600; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.pbar button, .pbar a { background: var(--panel2); color: var(--text); border: 1px solid var(--border);
+  border-radius: 8px; padding: 6px 12px; cursor: pointer; font: inherit; font-size: 13px; text-decoration: none; }
+@media (max-width: 600px) {
+  header { padding: 14px 16px 10px; } main { padding: 8px 16px 40px; }
+  .kbd { display: none; }
+}
+</style>
+</head>
+<body>
+<a href="../index.html" style="position:fixed;top:12px;right:16px;z-index:99;font:600 13px system-ui,sans-serif;color:#fff;background:#c97b4a;padding:7px 12px;border-radius:6px;text-decoration:none">&larr; Dealer Manual</a>
+<header><div class="wrap">
+  <h1>ActTrader Dealer How-to Videos <small style="font-size:.5em;opacity:.7">INTERNAL</small></h1>
+  <div class="sub">15 short videos. Search by what you want to do. Search also looks inside what is said in each video.</div>
+  <label class="search">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+    <input id="q" type="search" placeholder="e.g. stop loss, price alert, export, trailing" autocomplete="off" aria-label="Search videos">
+    <span class="kbd">/</span>
+  </label>
+  <div class="chips" id="chips" role="group" aria-label="Sections"></div>
+</div></header>
+<main><div class="wrap">
+  <div class="count" id="count"></div>
+  <div id="list"></div>
+</div></main>
+<div class="player" id="player" role="dialog" aria-modal="true" aria-label="Video player">
+  <div class="pbox">
+    <video id="vid" controls preload="metadata"></video>
+    <div class="pbar"><div class="t" id="ptitle"></div>
+      <a id="pdl" download>Download</a><button id="pclose">Close (Esc)</button></div>
+  </div>
+</div>
+<script>
+var DATA = {"sections": ["Getting started", "Accounts", "Rates & charts", "Orders", "Positions", "Blotter & reports"], "videos": [{"id": "D00", "file": "D00_dealer_login.mp4", "thumb": "thumbs/D00.jpg", "section": "Getting started", "title": "Log in to the dealer app", "summary": "Pick the dealing server, enter your dealer login and password.", "dur": 40, "cues": [[1.9, "The dealer app opens on its own login screen, marked DEALER."], [8.7, "Click the Server box and pick your dealing server from the list."], [13.8, "Enter your dealer login."], [18.3, "Then your password. It stays hidden."], [22.8, "Click Login."], [24.7, "The app loads every account, order and position in your book. On a large book this takes a few seconds."], [33.8, "You are in. Connected at the top left means live updates are flowing."]]}, {"id": "D01", "file": "D01_dealer_workspace.mp4", "thumb": "thumbs/D01.jpg", "section": "Getting started", "title": "Find your way around the dealer screen", "summary": "The tabs, the right-hand icons, Market Open and the bottom bar.", "dur": 78, "cues": [[1.9, "The dealer app shows your whole book: every client account, order and position."], [7.8, "Accounts lists every client account with its balance, equity, margin and profit."], [11.7, "Under the accounts, the Summary totals open positions by instrument, for the account you select or for all."], [18.1, "Rates & Charts shows every instrument with live prices. Here you change prices, spreads and negotiation."], [23.5, "Orders holds the pending orders of all traders. The badge counts the ones waiting."], [28.9, "Trades lists every open position in the book."], [34.4, "Blotter shows the deals done today or this shift, and your result by instrument."], [39.8, "Position History lists closed positions."], [45.2, "Events and Message: server events, price alerts, news and the STP logs."], [50.6, "Symbol Exposure is your net exposure in each instrument."], [56.2, "This shows whether the market is open. Clicking it closes trading for every trader, so use it with care."], [61.6, "Message sends a note to traders."], [65.0, "On the right: profiles, theme, Price Changer, Order Depth and settings."], [72.2, "The bar at the bottom shows your dealer account, and switches the blotter between Day and Shift."]]}, {"id": "D13", "file": "D13_dealer_icons_settings.mp4", "thumb": "thumbs/D13.jpg", "section": "Getting started", "title": "Icons on the right and Settings", "summary": "Profiles, theme, Price Changer, Order Depth and the Settings window.", "dur": 67, "cues": [[4.3, "Profiles keeps different screen layouts. Type a name and Create to save the current one."], [12.1, "Theme chooses dark or light, and the font size."], [23.4, "Price Changer sets prices for many instruments at once: select them, move the price with the quick buttons, and Apply."], [28.5, "Apply changes the price for every trader. Here we close without changing anything."], [34.5, "Order Depth shows pending orders by price for an instrument."], [41.3, "Settings, Account: your dealer details, the time zone for all times, and the currency money is shown in."], [48.2, "Notifications: which events pop up, and whether to confirm before you execute or reject an order."], [55.1, "Security changes your password."], [60.6, "Session logs you out."]]}, {"id": "D02", "file": "D02_dealer_accounts.mp4", "thumb": "thumbs/D02.jpg", "section": "Accounts", "title": "Work with client accounts", "summary": "Search accounts, read the grid, the Summary of one account, Trader Details and Closed Positions.", "dur": 60, "cues": [[4.3, "Accounts lists every client account: balance, equity, margin, profit, default amount and negotiation mode."], [9.0, "The DEALER row at the top is your own side of all client positions."], [13.7, "Search by account, trader or name."], [19.3, "Select an account and the Summary below shows only its positions, by instrument."], [25.5, "Right-click an account for everything you can do with it: negotiation, default amount, group, dealer range, deactivate, reports, messages and export."], [31.3, "Show in Trader Details opens the trader's accounts, positions and orders."], [35.5, "Everything for this trader in one window."], [43.4, "Closed Positions shows the account's closed trades in Position History."], [48.1, "The title shows the account. Show All Accounts goes back to everyone."], [56.3, "Clear the search to see all accounts again."]]}, {"id": "D08", "file": "D08_dealer_account_settings.mp4", "thumb": "thumbs/D08.jpg", "section": "Accounts", "title": "Change an account's settings", "summary": "Negotiation, default amount, group, dealer range and deactivating an account.", "dur": 99, "cues": [[9.9, "Right-click an account to change its settings."], [18.3, "Set Negotiation decides which of the client's orders need your confirmation."], [28.5, "The Neg column shows the new setting."], [41.7, "Back to the instrument's own setting."], [48.8, "Set Default Amount is the client's default trade size, in trade steps or as a share of usable margin."], [58.5, "DA shows it."], [74.4, "Set Group gives the account a label for grouping accounts in the grid."], [84.4, "Set Dealer Range sets the price tolerance for this client's orders; the default is the system value."], [92.2, "Deactivate Account blocks the client from trading until you activate it again."]]}, {"id": "D09", "file": "D09_dealer_send_message.mp4", "thumb": "thumbs/D09.jpg", "section": "Accounts", "title": "Send a message to a client", "summary": "Write to one account, one login, everyone online or everyone.", "dur": 39, "cues": [[9.7, "Send Message writes to the client from the dealing desk."], [13.3, "Opened from an account, it goes to that account."], [17.8, "You can also send to every client, to everyone online, or to one login. Take care: All and Online reach every trader."], [28.3, "Type the message and Send."], [33.4, "Message at the top right opens the same window, for a message to more clients."]]}, {"id": "D11", "file": "D11_dealer_summary.mp4", "thumb": "thumbs/D11.jpg", "section": "Accounts", "title": "Read the Summary panel", "summary": "Totals by instrument, period and scope, not-hedged mode and export.", "dur": 68, "cues": [[5.3, "Summary adds up open positions by instrument and side: lots, average open, close and break-even, and the profit."], [10.5, "The title shows the scope and the total net profit."], [14.6, "The NH columns count only the part that is not hedged."], [18.8, "The cross in Close closes all positions in that row, for every client. Use it with care."], [24.7, "Day Summary counts only today's positions; Shift Summary, the current shift."], [28.4, "The title says what you are looking at."], [38.1, "Summary by Internal Trading leaves out the clearing accounts: your exposure to client trading."], [41.8, "The title says what you are looking at."], [51.4, "Not hedged summary shows only what is not hedged."], [55.1, "The title says what you are looking at."], [63.7, "Export CSV saves the table for a spreadsheet."]]}, {"id": "D03", "file": "D03_dealer_rates.mp4", "thumb": "thumbs/D03.jpg", "section": "Rates & charts", "title": "Manage instrument rates", "summary": "Change Price, negotiation and dealer range per instrument, charts and order depth.", "dur": 92, "cues": [[4.8, "Rates & Charts lists every instrument with live bid, ask, spread, high and low, rollover and break times."], [9.5, "The keys shown here work on the selected row: R rate, N negotiation, G range, H high/low, I interest, C chart."], [17.6, "Rate opens Change Price."], [21.8, "Set a new bid or ask, the spread, the feed mode and source, or shift the feed price."], [26.6, "The quick buttons move the price by whole pips."], [30.3, "Apply sends it to every trader at once. We close without changing anything."], [39.1, "Neg. sets negotiation for the instrument: Auto fills at once, Value and Full need your confirmation."], [50.0, "Set Range is the dealer range in pips for the instrument."], [58.0, "Right-click for more: chart, order depth, price alert, high/low and rollover interest."], [68.7, "View on Chart opens a live chart of the instrument."], [81.8, "Order Depth shows pending orders by price, buy on the left and sell on the right."]]}, {"id": "D10", "file": "D10_dealer_orders.mp4", "thumb": "thumbs/D10.jpg", "section": "Orders", "title": "Handle pending orders", "summary": "Read the Orders grid, modify an order, attach a stop or limit, and remove it.", "dur": 82, "cues": [[8.8, "Orders lists every pending order: entry orders waiting for their price, and orders waiting for your confirmation."], [13.5, "Proximity is the distance to the market in pips, and it updates live. T is the order type: EL entry limit, ES entry stop."], [18.6, "Execute and Reject decide the orders that wait for you. The badge on the tab counts all pending orders."], [26.9, "Right-click a column header to choose the columns. Here, Predef.Stop."], [34.5, "Right-click an order to change it."], [39.6, "Modify Order changes its rate or size."], [45.6, "The new rate is in the list."], [54.9, "Stop and Limit attach a stop-loss or take-profit to the entry order. It applies once the order fills; the entry rate is unchanged."], [63.4, "Predef.Stop shows it."], [70.4, "Remove Order cancels it for the client."], [76.9, "The order leaves the list."]]}, {"id": "D12", "file": "D12_dealer_confirm_orders.mp4", "thumb": "thumbs/D12.jpg", "section": "Orders", "title": "Confirm a client order", "summary": "Orders waiting for the dealer: read them and accept one.", "dur": 39, "cues": [[8.8, "Orders that wait for your decision are highlighted at the top. Type I is a market order to open a position."], [13.9, "Proximity shows how far the market is from the client's price, in pips. Green or red shows which way it has moved."], [20.0, "Select the order and press Accept."], [23.3, "Confirm Order shows the order. You can fill it at another rate or for a different amount, or leave them as they are."], [32.8, "Accepted: the order becomes the client's position."]]}, {"id": "D14", "file": "D14_dealer_oco.mp4", "thumb": "thumbs/D14.jpg", "section": "Orders", "title": "Link two orders as OCO", "summary": "Make two entry orders One-Cancels-Other and see the link.", "dur": 45, "cues": [[10.6, "Two entry orders for the same client and instrument: a buy limit below the market and a buy stop above it."], [18.7, "First show the OCO column."], [25.1, "Link OCO Order makes the two orders One-Cancels-Other."], [28.6, "Pick the order to link with. Only orders that can be linked are listed: same client, instrument and side, one limit and one stop."], [38.6, "Each order now shows its partner in OCO. When one fills, the other is cancelled."]]}, {"id": "D06", "file": "D06_dealer_position_actions.mp4", "thumb": "thumbs/D06.jpg", "section": "Positions", "title": "Manage a client position", "summary": "Set stop, limit and trailing stop, or close a position for the client.", "dur": 74, "cues": [[8.8, "Trades lists every open position. Here, one client account's positions."], [13.9, "Right-click a position to set its stop or limit, close it or hedge it."], [19.6, "Stop sets the stop loss. Type a rate, or a distance in points; the projected loss is shown."], [28.0, "The stop shows in the Stop column."], [35.4, "Limit sets the take profit the same way."], [43.4, "And the limit in the Limit column."], [50.8, "Trailing Stop sets a stop that follows the price at a fixed distance."], [60.3, "Close Position closes it for the client: all of it, or part, at the current rate or a rate you set."], [69.4, "The position is closed and leaves the list."]]}, {"id": "D07", "file": "D07_dealer_hedge.mp4", "thumb": "thumbs/D07.jpg", "section": "Positions", "title": "Hedge and close with hedge", "summary": "Open the opposite position, then close both together at one rate.", "dur": 47, "cues": [[10.4, "Hedge Position opens the opposite position for the client, the same size or less."], [13.9, "Set the amount and rate, then Hedge."], [22.9, "The client now holds a buy and a sell of the same size."], [28.7, "Close with Hedge closes a position against its opposite one."], [32.2, "Both close together, at one rate."], [42.3, "Both positions are gone."]]}, {"id": "D04", "file": "D04_dealer_blotter.mp4", "thumb": "thumbs/D04.jpg", "section": "Blotter & reports", "title": "Use the blotter", "summary": "Transaction blotter, reopened positions, M2M and overall views.", "dur": 65, "cues": [[5.8, "Transaction Blotter lists every deal: account, order, ticket, instrument, lot, side and rate."], [10.5, "Day or Shift sets the period. Refresh loads the newest deals, and Filters narrows the list."], [20.7, "Reopened (Trading) lists the positions carried over from earlier days, on the trading side."], [28.2, "Reopened (Clearing) does the same for the clearing side."], [35.8, "Trading M2M marks the book to market: offset and market-maker profit for each instrument, with the total on top."], [43.4, "Clearing M2M is the same view for the clearing side."], [51.0, "Overall Info adds both views up per instrument."], [55.7, "Each view has its own search."], [59.8, "Day and Shift are also on the bottom bar."]]}, {"id": "D05", "file": "D05_dealer_events_exposure.mp4", "thumb": "thumbs/D05.jpg", "section": "Blotter & reports", "title": "Events, messages and exposure", "summary": "Events and messages, price alerts, news, STP logs and symbol exposure.", "dur": 58, "cues": [[5.8, "Events and Message collects everything the server reports: logins, deals, margin warnings and messages."], [12.4, "Click an event to read all of it below."], [16.2, "Price Alerts lists your alerts. Add one by right-clicking an instrument in Rates & Charts."], [21.1, "News shows the latest market headlines."], [24.9, "At the bottom, the STP logs list the orders passed on to your liquidity providers: filled ones on the left, the ones that failed on the right."], [30.6, "Look-back sets how many hours they cover."], [38.4, "Symbol Exposure is your net position in each instrument: deals, average price, net lots and exposure, swaps, commissions and profit."], [44.0, "TOTAL at the top adds up the whole book."], [50.6, "Search to find an instrument."], [53.4, "Export CSV saves the table for a spreadsheet."]]}]};
+var state = { q: "", section: "All" };
+try { var s = JSON.parse(localStorage.getItem("howto-state") || "{}"); if (s.section) state.section = s.section; } catch (e) {}
+
+function esc(s) { return s.replace(/[&<>"]/g, function (c) { return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]; }); }
+function norm(s) { return s.toLowerCase(); }
+function words(q) { return norm(q).split(/\s+/).filter(Boolean); }
+function hl(text, ws) {
+  var out = esc(text);
+  ws.forEach(function (w) {
+    var re = new RegExp("(" + w.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + ")", "ig");
+    out = out.replace(re, "<mark>$1</mark>");
+  });
+  return out;
+}
+function fmt(t) { t = Math.floor(t); return Math.floor(t / 60) + ":" + String(t % 60).padStart(2, "0"); }
+
+function match(v, ws) {
+  if (!ws.length) return { ok: true, score: 0, hits: [] };
+  var head = norm(v.title + " " + v.summary + " " + v.section), score = 0, hits = [];
+  var all = ws.every(function (w) {
+    var inHead = head.indexOf(w) >= 0;
+    var inCue = v.cues.some(function (c) { return norm(c[1]).indexOf(w) >= 0; });
+    if (inHead) score += 10;
+    return inHead || inCue;
+  });
+  if (!all) return { ok: false };
+  v.cues.forEach(function (c) {
+    var n = norm(c[1]);
+    if (ws.some(function (w) { return n.indexOf(w) >= 0; })) hits.push(c);
+  });
+  score += hits.length;
+  return { ok: true, score: score, hits: hits.slice(0, 3) };
+}
+
+function card(v, m, ws) {
+  var hits = "";
+  if (m.hits && m.hits.length) {
+    hits = '<ul class="hits">' + m.hits.map(function (c) {
+      return '<li><a href="' + esc(v.file) + "#t=" + c[0] + '" data-t="' + c[0] + '">' + fmt(c[0]) + "</a><span>" + hl(c[1], ws) + "</span></li>";
+    }).join("") + "</ul>";
+  }
+  return '<div class="card" tabindex="0" role="button" data-id="' + v.id + '" aria-label="' + esc(v.title) + '">' +
+    '<div class="thumb"><img loading="lazy" src="' + esc(v.thumb) + '" alt=""><span class="dur">' + fmt(v.dur) + "</span>" +
+    '<div class="play"><span><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></span></div></div>' +
+    '<div class="body"><p class="title">' + hl(v.title, ws) + '</p><p class="sum">' + hl(v.summary, ws) + "</p>" + hits + "</div></div>";
+}
+
+function render() {
+  var ws = words(state.q), shown = 0, html = "";
+  var inSec = DATA.videos.filter(function (v) { return state.section === "All" || v.section === state.section; });
+  if (ws.length) {
+    var res = inSec.map(function (v) { return { v: v, m: match(v, ws) }; })
+                   .filter(function (r) { return r.m.ok; })
+                   .sort(function (a, b) { return b.m.score - a.m.score; });
+    shown = res.length;
+    if (res.length) html = '<div class="grid">' + res.map(function (r) { return card(r.v, r.m, ws); }).join("") + "</div>";
+  } else {
+    DATA.sections.forEach(function (sec) {
+      var vs = inSec.filter(function (v) { return v.section === sec; });
+      if (!vs.length) return;
+      shown += vs.length;
+      html += "<h2>" + esc(sec) + '</h2><div class="grid">' + vs.map(function (v) { return card(v, { hits: [] }, []); }).join("") + "</div>";
+    });
+  }
+  document.getElementById("list").innerHTML = html || '<div class="empty">No videos match “' + esc(state.q) + '”. Try another word.</div>';
+  document.getElementById("count").textContent = shown + (shown === 1 ? " video" : " videos");
+}
+
+function chips() {
+  var counts = {};
+  DATA.videos.forEach(function (v) { counts[v.section] = (counts[v.section] || 0) + 1; });
+  var list = ["All"].concat(DATA.sections);
+  document.getElementById("chips").innerHTML = list.map(function (s) {
+    var n = s === "All" ? DATA.videos.length : (counts[s] || 0);
+    return '<button class="chip" aria-pressed="' + (state.section === s) + '" data-s="' + esc(s) + '">' + esc(s) + '<span class="n">' + n + "</span></button>";
+  }).join("");
+}
+
+var player = document.getElementById("player"), vid = document.getElementById("vid");
+function openVideo(id, t) {
+  var v = DATA.videos.filter(function (x) { return x.id === id; })[0];
+  if (!v) return;
+  vid.src = v.file + (t ? "#t=" + t : "");
+  document.getElementById("ptitle").textContent = v.title;
+  document.getElementById("pdl").href = v.file;
+  player.classList.add("open");
+  vid.play && vid.play().catch(function () {});
+  history.replaceState(null, "", "#" + v.id + (t ? "-" + t : ""));
+}
+function closeVideo() { vid.pause(); vid.removeAttribute("src"); vid.load(); player.classList.remove("open");
+  history.replaceState(null, "", location.pathname + location.search); }
+
+document.getElementById("q").addEventListener("input", function (e) { state.q = e.target.value; render(); });
+document.getElementById("chips").addEventListener("click", function (e) {
+  var b = e.target.closest(".chip"); if (!b) return;
+  state.section = b.getAttribute("data-s");
+  try { localStorage.setItem("howto-state", JSON.stringify({ section: state.section })); } catch (x) {}
+  chips(); render();
+});
+document.getElementById("list").addEventListener("click", function (e) {
+  var a = e.target.closest("a[data-t]"), c = e.target.closest(".card");
+  if (!c) return;
+  e.preventDefault();
+  openVideo(c.getAttribute("data-id"), a ? a.getAttribute("data-t") : 0);
+});
+document.getElementById("list").addEventListener("keydown", function (e) {
+  if ((e.key === "Enter" || e.key === " ") && e.target.classList.contains("card")) {
+    e.preventDefault(); openVideo(e.target.getAttribute("data-id"), 0);
+  }
+});
+document.getElementById("pclose").addEventListener("click", closeVideo);
+player.addEventListener("click", function (e) { if (e.target === player) closeVideo(); });
+document.addEventListener("keydown", function (e) {
+  if (e.key === "Escape" && player.classList.contains("open")) closeVideo();
+  else if (e.key === "/" && document.activeElement.id !== "q") { e.preventDefault(); document.getElementById("q").focus(); }
+});
+
+// Deep links: index.html?q=stop+loss, index.html?section=Charts, index.html#T21 or #T21-12.5
+(function () {
+  var p = new URLSearchParams(location.search);
+  if (p.get("q")) { state.q = p.get("q"); document.getElementById("q").value = state.q; }
+  if (p.get("section") && DATA.sections.indexOf(p.get("section")) >= 0) state.section = p.get("section");
+  chips(); render();
+  var h = location.hash.replace("#", "");
+  if (h) { var m = h.split("-"); openVideo(m[0], m[1] || 0); }
+})();
+</script>
+</body>
+</html>

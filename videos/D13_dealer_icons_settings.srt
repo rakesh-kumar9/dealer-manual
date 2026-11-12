@@ -1,0 +1,36 @@
+1
+00:00:04,310 --> 00:00:11,990
+Profiles keeps different screen layouts. Type a name and Create to save the current one.
+
+2
+00:00:12,090 --> 00:00:23,250
+Theme chooses dark or light, and the font size.
+
+3
+00:00:23,350 --> 00:00:28,410
+Price Changer sets prices for many instruments at once: select them, move the price with the quick buttons, and Apply.
+
+4
+00:00:28,510 --> 00:00:34,400
+Apply changes the price for every trader. Here we close without changing anything.
+
+5
+00:00:34,500 --> 00:00:41,180
+Order Depth shows pending orders by price for an instrument.
+
+6
+00:00:41,280 --> 00:00:48,100
+Settings, Account: your dealer details, the time zone for all times, and the currency money is shown in.
+
+7
+00:00:48,200 --> 00:00:55,040
+Notifications: which events pop up, and whether to confirm before you execute or reject an order.
+
+8
+00:00:55,140 --> 00:01:00,460
+Security changes your password.
+
+9
+00:01:00,560 --> 00:01:05,270
+Session logs you out.
+

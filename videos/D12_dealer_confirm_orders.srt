@@ -1,0 +1,20 @@
+1
+00:00:08,770 --> 00:00:13,830
+Orders that wait for your decision are highlighted at the top. Type I is a market order to open a position.
+
+2
+00:00:13,930 --> 00:00:19,860
+Proximity shows how far the market is from the client's price, in pips. Green or red shows which way it has moved.
+
+3
+00:00:19,960 --> 00:00:23,180
+Select the order and press Accept.
+
+4
+00:00:23,280 --> 00:00:32,660
+Confirm Order shows the order. You can fill it at another rate or for a different amount, or leave them as they are.
+
+5
+00:00:32,760 --> 00:00:39,250
+Accepted: the order becomes the client's position.
+

@@ -1,0 +1,40 @@
+1
+00:00:05,830 --> 00:00:12,260
+Events and Message collects everything the server reports: logins, deals, margin warnings and messages.
+
+2
+00:00:12,360 --> 00:00:16,120
+Click an event to read all of it below.
+
+3
+00:00:16,220 --> 00:00:20,980
+Price Alerts lists your alerts. Add one by right-clicking an instrument in Rates & Charts.
+
+4
+00:00:21,080 --> 00:00:24,840
+News shows the latest market headlines.
+
+5
+00:00:24,940 --> 00:00:30,500
+At the bottom, the STP logs list the orders passed on to your liquidity providers: filled ones on the left, the ones that failed on the right.
+
+6
+00:00:30,600 --> 00:00:38,280
+Look-back sets how many hours they cover.
+
+7
+00:00:38,380 --> 00:00:43,940
+Symbol Exposure is your net position in each instrument: deals, average price, net lots and exposure, swaps, commissions and profit.
+
+8
+00:00:44,040 --> 00:00:50,480
+TOTAL at the top adds up the whole book.
+
+9
+00:00:50,580 --> 00:00:53,340
+Search to find an instrument.
+
+10
+00:00:53,440 --> 00:00:56,340
+Export CSV saves the table for a spreadsheet.
+

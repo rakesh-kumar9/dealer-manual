@@ -1,0 +1,36 @@
+1
+00:00:05,810 --> 00:00:10,370
+Transaction Blotter lists every deal: account, order, ticket, instrument, lot, side and rate.
+
+2
+00:00:10,470 --> 00:00:20,560
+Day or Shift sets the period. Refresh loads the newest deals, and Filters narrows the list.
+
+3
+00:00:20,660 --> 00:00:28,140
+Reopened (Trading) lists the positions carried over from earlier days, on the trading side.
+
+4
+00:00:28,240 --> 00:00:35,710
+Reopened (Clearing) does the same for the clearing side.
+
+5
+00:00:35,810 --> 00:00:43,290
+Trading M2M marks the book to market: offset and market-maker profit for each instrument, with the total on top.
+
+6
+00:00:43,390 --> 00:00:50,870
+Clearing M2M is the same view for the clearing side.
+
+7
+00:00:50,970 --> 00:00:55,580
+Overall Info adds both views up per instrument.
+
+8
+00:00:55,680 --> 00:00:59,700
+Each view has its own search.
+
+9
+00:00:59,800 --> 00:01:02,700
+Day and Shift are also on the bottom bar.
+

@@ -1,0 +1,36 @@
+1
+00:00:08,800 --> 00:00:13,830
+Trades lists every open position. Here, one client account's positions.
+
+2
+00:00:13,930 --> 00:00:19,540
+Right-click a position to set its stop or limit, close it or hedge it.
+
+3
+00:00:19,640 --> 00:00:27,940
+Stop sets the stop loss. Type a rate, or a distance in points; the projected loss is shown.
+
+4
+00:00:28,040 --> 00:00:35,310
+The stop shows in the Stop column.
+
+5
+00:00:35,410 --> 00:00:43,300
+Limit sets the take profit the same way.
+
+6
+00:00:43,400 --> 00:00:50,670
+And the limit in the Limit column.
+
+7
+00:00:50,770 --> 00:01:00,220
+Trailing Stop sets a stop that follows the price at a fixed distance.
+
+8
+00:01:00,320 --> 00:01:09,310
+Close Position closes it for the client: all of it, or part, at the current rate or a rate you set.
+
+9
+00:01:09,410 --> 00:01:12,810
+The position is closed and leaves the list.
+

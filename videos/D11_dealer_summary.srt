@@ -1,0 +1,44 @@
+1
+00:00:05,310 --> 00:00:10,370
+Summary adds up open positions by instrument and side: lots, average open, close and break-even, and the profit.
+
+2
+00:00:10,470 --> 00:00:14,530
+The title shows the scope and the total net profit.
+
+3
+00:00:14,630 --> 00:00:18,690
+The NH columns count only the part that is not hedged.
+
+4
+00:00:18,790 --> 00:00:24,620
+The cross in Close closes all positions in that row, for every client. Use it with care.
+
+5
+00:00:24,720 --> 00:00:28,350
+Day Summary counts only today's positions; Shift Summary, the current shift.
+
+6
+00:00:28,450 --> 00:00:37,960
+The title says what you are looking at.
+
+7
+00:00:38,060 --> 00:00:41,680
+Summary by Internal Trading leaves out the clearing accounts: your exposure to client trading.
+
+8
+00:00:41,780 --> 00:00:51,310
+The title says what you are looking at.
+
+9
+00:00:51,410 --> 00:00:55,030
+Not hedged summary shows only what is not hedged.
+
+10
+00:00:55,130 --> 00:01:03,590
+The title says what you are looking at.
+
+11
+00:01:03,690 --> 00:01:06,590
+Export CSV saves the table for a spreadsheet.
+

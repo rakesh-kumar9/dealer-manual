@@ -1,0 +1,44 @@
+1
+00:00:08,800 --> 00:00:13,360
+Orders lists every pending order: entry orders waiting for their price, and orders waiting for your confirmation.
+
+2
+00:00:13,460 --> 00:00:18,520
+Proximity is the distance to the market in pips, and it updates live. T is the order type: EL entry limit, ES entry stop.
+
+3
+00:00:18,620 --> 00:00:26,780
+Execute and Reject decide the orders that wait for you. The badge on the tab counts all pending orders.
+
+4
+00:00:26,880 --> 00:00:34,390
+Right-click a column header to choose the columns. Here, Predef.Stop.
+
+5
+00:00:34,490 --> 00:00:39,550
+Right-click an order to change it.
+
+6
+00:00:39,650 --> 00:00:45,530
+Modify Order changes its rate or size.
+
+7
+00:00:45,630 --> 00:00:54,810
+The new rate is in the list.
+
+8
+00:00:54,910 --> 00:01:03,290
+Stop and Limit attach a stop-loss or take-profit to the entry order. It applies once the order fills; the entry rate is unchanged.
+
+9
+00:01:03,390 --> 00:01:10,290
+Predef.Stop shows it.
+
+10
+00:01:10,390 --> 00:01:16,770
+Remove Order cancels it for the client.
+
+11
+00:01:16,870 --> 00:01:19,770
+The order leaves the list.
+

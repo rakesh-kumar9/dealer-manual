@@ -1,0 +1,40 @@
+1
+00:00:04,320 --> 00:00:08,880
+Accounts lists every client account: balance, equity, margin, profit, default amount and negotiation mode.
+
+2
+00:00:08,980 --> 00:00:13,600
+The DEALER row at the top is your own side of all client positions.
+
+3
+00:00:13,700 --> 00:00:19,240
+Search by account, trader or name.
+
+4
+00:00:19,340 --> 00:00:25,360
+Select an account and the Summary below shows only its positions, by instrument.
+
+5
+00:00:25,460 --> 00:00:31,220
+Right-click an account for everything you can do with it: negotiation, default amount, group, dealer range, deactivate, reports, messages and export.
+
+6
+00:00:31,320 --> 00:00:35,430
+Show in Trader Details opens the trader's accounts, positions and orders.
+
+7
+00:00:35,530 --> 00:00:43,270
+Everything for this trader in one window.
+
+8
+00:00:43,370 --> 00:00:47,990
+Closed Positions shows the account's closed trades in Position History.
+
+9
+00:00:48,090 --> 00:00:56,160
+The title shows the account. Show All Accounts goes back to everyone.
+
+10
+00:00:56,260 --> 00:00:58,670
+Clear the search to see all accounts again.
+

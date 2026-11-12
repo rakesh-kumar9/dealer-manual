@@ -1,0 +1,24 @@
+1
+00:00:10,360 --> 00:00:13,770
+Hedge Position opens the opposite position for the client, the same size or less.
+
+2
+00:00:13,870 --> 00:00:22,850
+Set the amount and rate, then Hedge.
+
+3
+00:00:22,950 --> 00:00:28,590
+The client now holds a buy and a sell of the same size.
+
+4
+00:00:28,690 --> 00:00:32,110
+Close with Hedge closes a position against its opposite one.
+
+5
+00:00:32,210 --> 00:00:42,200
+Both close together, at one rate.
+
+6
+00:00:42,300 --> 00:00:45,200
+Both positions are gone.
+

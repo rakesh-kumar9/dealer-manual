@@ -1,0 +1,56 @@
+1
+00:00:01,890 --> 00:00:07,710
+The dealer app shows your whole book: every client account, order and position.
+
+2
+00:00:07,810 --> 00:00:11,580
+Accounts lists every client account with its balance, equity, margin and profit.
+
+3
+00:00:11,680 --> 00:00:18,010
+Under the accounts, the Summary totals open positions by instrument, for the account you select or for all.
+
+4
+00:00:18,110 --> 00:00:23,430
+Rates & Charts shows every instrument with live prices. Here you change prices, spreads and negotiation.
+
+5
+00:00:23,530 --> 00:00:28,850
+Orders holds the pending orders of all traders. The badge counts the ones waiting.
+
+6
+00:00:28,950 --> 00:00:34,270
+Trades lists every open position in the book.
+
+7
+00:00:34,370 --> 00:00:39,680
+Blotter shows the deals done today or this shift, and your result by instrument.
+
+8
+00:00:39,780 --> 00:00:45,100
+Position History lists closed positions.
+
+9
+00:00:45,200 --> 00:00:50,520
+Events and Message: server events, price alerts, news and the STP logs.
+
+10
+00:00:50,620 --> 00:00:56,130
+Symbol Exposure is your net exposure in each instrument.
+
+11
+00:00:56,230 --> 00:01:01,490
+This shows whether the market is open. Clicking it closes trading for every trader, so use it with care.
+
+12
+00:01:01,590 --> 00:01:04,850
+Message sends a note to traders.
+
+13
+00:01:04,950 --> 00:01:12,140
+On the right: profiles, theme, Price Changer, Order Depth and settings.
+
+14
+00:01:12,240 --> 00:01:16,140
+The bar at the bottom shows your dealer account, and switches the blotter between Day and Shift.
+

@@ -1,0 +1,36 @@
+1
+00:00:09,880 --> 00:00:18,220
+Right-click an account to change its settings.
+
+2
+00:00:18,320 --> 00:00:28,400
+Set Negotiation decides which of the client's orders need your confirmation.
+
+3
+00:00:28,500 --> 00:00:41,590
+The Neg column shows the new setting.
+
+4
+00:00:41,690 --> 00:00:48,730
+Back to the instrument's own setting.
+
+5
+00:00:48,830 --> 00:00:58,420
+Set Default Amount is the client's default trade size, in trade steps or as a share of usable margin.
+
+6
+00:00:58,520 --> 00:01:14,280
+DA shows it.
+
+7
+00:01:14,380 --> 00:01:24,270
+Set Group gives the account a label for grouping accounts in the grid.
+
+8
+00:01:24,370 --> 00:01:32,120
+Set Dealer Range sets the price tolerance for this client's orders; the default is the system value.
+
+9
+00:01:32,220 --> 00:01:37,120
+Deactivate Account blocks the client from trading until you activate it again.
+

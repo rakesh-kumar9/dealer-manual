@@ -1,0 +1,44 @@
+1
+00:00:04,820 --> 00:00:09,380
+Rates & Charts lists every instrument with live bid, ask, spread, high and low, rollover and break times.
+
+2
+00:00:09,480 --> 00:00:17,520
+The keys shown here work on the selected row: R rate, N negotiation, G range, H high/low, I interest, C chart.
+
+3
+00:00:17,620 --> 00:00:21,650
+Rate opens Change Price.
+
+4
+00:00:21,750 --> 00:00:26,510
+Set a new bid or ask, the spread, the feed mode and source, or shift the feed price.
+
+5
+00:00:26,610 --> 00:00:30,170
+The quick buttons move the price by whole pips.
+
+6
+00:00:30,270 --> 00:00:38,960
+Apply sends it to every trader at once. We close without changing anything.
+
+7
+00:00:39,060 --> 00:00:49,850
+Neg. sets negotiation for the instrument: Auto fills at once, Value and Full need your confirmation.
+
+8
+00:00:49,950 --> 00:00:57,890
+Set Range is the dealer range in pips for the instrument.
+
+9
+00:00:57,990 --> 00:01:08,560
+Right-click for more: chart, order depth, price alert, high/low and rollover interest.
+
+10
+00:01:08,660 --> 00:01:21,740
+View on Chart opens a live chart of the instrument.
+
+11
+00:01:21,840 --> 00:01:30,580
+Order Depth shows pending orders by price, buy on the left and sell on the right.
+
