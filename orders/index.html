@@ -1033,13 +1033,17 @@ back office how your server handles a rejected order before relying on it.</p>
   change. The window works like the one for an open position, measured from the order's rate.
   The <strong>Predef.Stop</strong> / <strong>Predef.Limit</strong> columns show them.</li>
 <li><strong>Remove order</strong> cancels the order for the client after you confirm; the confirmation names
-  the order. Afterwards no order is selected.</li>
-<li><strong>Deactivate Order</strong> (also the <strong>Deactivate</strong> button) asks the server to deactivate the order,
-  after you confirm.</li>
+  the order. Afterwards no order is selected. An order that has already triggered cannot be
+  removed (unless your server allows it): execute or deactivate it first. A market order waiting
+  for your confirmation (type <strong>I</strong>) cannot be removed either: accept or reject it.</li>
+<li><strong>Deactivate Order</strong> (also the <strong>Deactivate</strong> button) is for a stop, limit or entry order that
+  has triggered and is waiting for you. After you confirm, the order goes back to waiting for its
+  price instead of being filled. It is greyed out for any other order.</li>
 <li><strong>Link OCO Order…</strong> links two entry orders as One-Cancels-Other: when one fills, the other is
   cancelled. Only orders of the same client, instrument and side, one limit and one stop, not yet
   triggered, can be linked. The <strong>OCO</strong> column (turn it on with <strong>Customize columns…</strong>) shows
-  each order's partner.</li>
+  each order's partner. If either order is already linked to a third one, you are warned, and
+  linking replaces that link: the third order is left unlinked.</li>
 <li><strong>Order Depth</strong> shows the instrument's pending orders by price.</li>
 </ul>
 <details class="video">
@@ -1051,6 +1055,9 @@ back office how your server handles a rejected order before relying on it.</p>
 <h2 id="views">Views<a class="headerlink" href="#views" title="Permanent link">¶</a></h2>
 <p>The right-click menu also switches the view: <strong>Show Entry</strong>, <strong>Show Imminent</strong> (orders close
 to triggering) and <strong>Show Urgent</strong> (orders that need you now).</p>
+<p>Row colours: a stop, limit or entry order within the instrument's imminent distance
+(<strong>ImmD</strong> on <a href="../rates/index.html">Rates &amp; Charts</a>) has a light amber row; one that has triggered and
+waits for you has a strong amber row and a filled <strong>Proximity</strong> cell.</p>
 
 
 
