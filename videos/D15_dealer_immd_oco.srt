@@ -1,0 +1,44 @@
+1
+00:00:01,890 --> 00:00:08,220
+ImmD is how close, in pips, a pending order must be to the market before Orders marks it imminent.
+
+2
+00:00:08,320 --> 00:00:12,590
+By default it is the server's value. To use your own for this instrument, untick Default.
+
+3
+00:00:12,690 --> 00:00:21,180
+Type the distance and click OK. It changes what you see, not the clients' orders.
+
+4
+00:00:21,280 --> 00:00:25,340
+In Orders, an order within that distance of the market has a light amber row.
+
+5
+00:00:25,440 --> 00:00:28,700
+This one is farther away, so it is not marked.
+
+6
+00:00:28,800 --> 00:00:33,990
+These two orders are linked as OCO: each shows its partner.
+
+7
+00:00:34,090 --> 00:00:40,240
+Link this order to one of them with Link OCO Order.
+
+8
+00:00:40,340 --> 00:00:49,420
+That order is already linked, so you are asked first. Replace moves the link.
+
+9
+00:00:49,520 --> 00:00:59,990
+The stop order is now linked to the new one, and the first order is left unlinked.
+
+10
+00:01:00,090 --> 00:01:05,140
+To go back to the server's value, tick Default and click OK.
+
+11
+00:01:05,240 --> 00:01:07,640
+ImmD shows the server's value again.
+
